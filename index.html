@@ -42,9 +42,35 @@ border-radius:5px;
 <input placeholder="เบอร์โทร"><br>
 <input type="file"><br>
 
-<button>สมัครสมาชิก</button>
+<button onclick="register()">สมัครสมาชิก</button>
 
 </div>
 
+<script>
+
+async function register(){
+
+const url="https://script.google.com/macros/s/AKfycbxQ_EQJ8JzILBRV5UBVuF68HvD2BUj598WGyes5S6clpZwCxXn7KzzyyJkKbmoxxdBl/exec";
+
+const data={
+name:document.getElementById("name").value,
+phone:document.getElementById("phone").value,
+lineid:"",
+contactname:"",
+contactphone:"",
+idcard:""
+};
+
+await fetch(url,{
+method:"POST",
+body:JSON.stringify(data)
+});
+
+alert("สมัครสมาชิกสำเร็จ");
+
+}
+
+</script>
+  
 </body>
 </html>
